@@ -12,6 +12,14 @@ requires = [
     'requests',
     'future',
 ]
+test_requires = requires + [
+    'mock',
+    'responses',
+    'zope.testing',
+    'nose',
+    'coverage',
+    'nosexcover',
+]
 
 setup(
     name='pyramid_heroku',
@@ -31,6 +39,9 @@ setup(
         ],
     packages=['pyramid_heroku'],
     install_requires=requires,
+    extras_require={
+        'test': test_requires,
+    },
     author='NiteoWeb Ltd.',
     author_email='info@niteoweb.com',
     license='BSD',
